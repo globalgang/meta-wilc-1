@@ -3,12 +3,12 @@
 
 This repository provides ATWILC1000 driver on Poky.
 
-see [ATWILC1000 driver](https://github.com/linux4sc/wireless-driver.git).
+see [ATWILC1000 driver](https://github.com/linux4sc/staging.git).
 
 ##Sources
 #### meta-wilc
-* URI: git://github.com/atwilc3000/meta-wilc.git
-* URI: https://github.com/atwilc3000/meta-wilc.git
+* URI: git://github.com/linux4sc/meta-wilc.git
+* URI: https://github.com/linux4sc/meta-wilc.git
 
 ##Dependencies
 #### meta-atmel
@@ -35,7 +35,9 @@ git clone git://git.openembedded.org/meta-openembedded
 #####3. Clone meta-qt5 git repository
 ~~~
 git clone git://github.com/meta-qt5/meta-qt5.git
+cd meta-qt5
 git reset --hard 754aaadc7f0a1c98a4895899617afbaef0f1cdfa
+cd ../
 ~~~
 #####4. Clone meta-atmel layer
 ~~~
@@ -47,6 +49,7 @@ git clone https://github.com/linux4sc/meta-wilc.git
 ~~~
 #####6. Initialize build directory
 ~~~
+cd poky
 source oe-init-build-env build-atmel
 ~~~
 #####7. Add meta-wilc layer patch to bblayer configuration file
@@ -110,7 +113,6 @@ DISTRO = "poky-atmel"
 ~~~
 Input correct package name
 ~~~  
-#Atmel
 #Atmel
 IMAGE_INSTALL_append += " \
   hostapd \
